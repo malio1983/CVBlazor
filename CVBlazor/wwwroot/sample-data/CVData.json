@@ -1,0 +1,131 @@
+{
+    "name": "Mohamad Alali Alomar",
+    "address": "'t Harde",
+    "phone": "0657257324",
+    "Email": "malio1983nl@gmail.com",
+    "Birthdate": "1983-05-01",
+    "Nationality": "Nederlands",
+    "MaritalStatus": "Gehuwd",
+    "DriverLicense": "Rijbewijs B",
+    "Profile": "Omschrijven doe ik mezelf als leergierig, flexibel en doorzettend. Iemand die ambitieus en gemotiveerd is. Zowel zelfstandig als in een team kan ik werken. Door mijn ervaring met verschillende taken heb ik een goede kennis met computers onderhoud en netwerken. Door beroepsbegeleidende leerweg streef ik naar een programmeur, netwerkspecialist of boekhouder te worden.",
+    "Languages": [
+        {
+            "Name": "Arabisch",
+            "Percentage": "100"
+        },
+        {
+            "Name": "Nederlands",
+            "Percentage": "70"
+        },
+        {
+            "Name": "Engels",
+            "Percentage": "50"
+        }
+
+    ],
+    "Educations": [
+        {
+            "University": "Damascus Univercity",
+            "From": "2010-09-01",
+            "To": "2015-08-01",
+            "Discreption": "Bachelor Economie (gewaardeerd in Nederland als HBO Accountancy)"
+        },
+        {
+            "University": "Damascus Univercity",
+            "From": "2001-09-01",
+            "To": "2003-06-01",
+            "Discreption": "Hogeschool in IT"
+        },
+        {
+            "University": "ITPH Academy",
+            "From": "2019-10-01",
+            "To": "2020-01-01",
+            "Discreption": "C# / .NET Developer"
+        }
+
+    ],
+    "Experiences": [
+        {
+            "From": "2021-09-01T00:00:00",
+            "To": "2022-10-01T00:00:00",
+            "Company": "DevRepublic",
+            "Title": ".Net Developer"
+        },
+        {
+            "From": "2021-02-01T00:00:00",
+            "To": "2021-09-01T00:00:00",
+            "Company": "VluchtelingenWerk Nederland - vrijwilligerswerk",
+            "Title": "Tolk- en ondersteunende werkzaamheden"
+        },
+        {
+            "From": "2020-04-01T00:00:00",
+            "To": "2020-10-01T00:00:00",
+            "Company": "BE Precision Technology",
+            "Title": "C# Developer"
+        },
+        {
+            "From": "2018-10-01T00:00:00",
+            "To": "2019-02-01T00:00:00",
+            "Company": "Windesheim hogeschool",
+            "Title": "Stage als ICT‘er"
+        },
+        {
+            "From": "2017-11-01T00:00:00",
+            "To": "2018-02-01T00:00:00",
+            "Company": "Windesheim hogeschool",
+            "Title": "Stage als boekhouder"
+        },
+        {
+            "From": "2010-09-01T00:00:00",
+            "To": "2015-08-01T00:00:00",
+            "Company": "Experts Centrum",
+            "Title": "IT Supportmedeweker"
+        },
+        {
+            "From": "2005-12-01T00:00:00",
+            "To": "2010-08-01T00:00:00",
+            "Company": "EIGEN ZAAK",
+            "Title": "IT Supportmedeweker"
+        }
+    ],
+    "Skills": [
+        {
+            "Name": "C#/.Net",
+            "Percentage": "70"
+        },
+        {
+            "Name": "HTML/CSS",
+            "Percentage": "70"
+        },
+        {
+            "Name": "JS/React",
+            "Percentage": "50"
+        },
+        {
+            "Name": "SQL",
+            "Percentage": "50"
+        },
+        {
+            "Name": "Azure/Git",
+            "Percentage": "60"
+        }
+
+    ],
+    "Courses": [
+        {
+            "Name": "Nederlandse taal als tweede taal B2",
+            "From": "2018-02-01",
+            "To": "2018-07-01"
+        },
+        {
+            "Name": "Nederlandse taal als tweede taal B1",
+            "From": "2017-05-01",
+            "To": "2017-12-01"
+        },
+        {
+            "Name": "Nederlandse taal als tweede taal A2",
+            "From": "2017-02-01",
+            "To": "2017-05-01"
+        }
+    ]
+}

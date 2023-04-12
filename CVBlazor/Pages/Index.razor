@@ -1,0 +1,231 @@
+﻿@page "/"
+@inject HttpClient http
+@inject IJSRuntime JS
+@implements IDisposable
+
+@using CVBlazor.Models;
+
+<div class="container">
+    <abbr title="Click to apply the color">
+      <span class="colors">
+        <button class="brown" value="brown" onclick="changecolor(this.value)"></button>
+        <button class="darkblue" value="#005" onclick="changecolor(this.value)"></button>
+        <button class="terquaz" value="rgb(3, 116, 124)" onclick="changecolor(this.value)"></button>
+        <button class="green" value="#080" onclick="changecolor(this.value)"></button>
+        <button class="petrol" value="#34435a" onclick="changecolor(this.value)"></button>
+        <button class="purple" value="purple" onclick="changecolor(this.value)"></button>
+      </span>
+    </abbr>
+    <div class="first-col">
+      <div class="image"></div>
+      <div class="name">
+        <h1>@Data.Name</h1>
+      </div>
+      <div class="info">
+        <div class="item">
+          <div class="details"><i class="fa fa-home fa-2x"></i></div>
+          <h3>@Data.Address</h3>
+        </div>
+        <div class="item">
+          <div class="details"><i class="fa fa-phone-alt fa-2x"></i></div>
+          <h3>@Data.Phone</h3>
+        </div>
+        <div class="item">
+          <div class="details"><i class="fa fa-at fa-2x"></i></div>
+          <h3>@Data.Email</h3>
+        </div>
+        <div class="item">
+          <div class="details"><i class="fa fa-id-card fa-2x"></i></div>
+          <h3>@Data.Birthdate.Date.ToString("dd MMM yyyy")</h3>
+        </div>
+        <div class="item">
+          <div class="details"><i class="fa fa-flag fa-2x"></i></div>
+          <h3>@Data.Nationality</h3>
+        </div>
+        <div class="item">
+          <div class="details"><i class="fa fa-users fa-2x"></i></div>
+          <h3>@Data.MaritalStatus</h3>
+        </div>
+        <div class="item">
+          <div class="details"><i class="fa fa-car-alt fa-2x"></i></div>
+          <h3>@Data.DriverLicense</h3>
+        </div>
+      </div>
+      <div class="profile">
+        <div>
+          <i class="fa fa-user-circle fa-2x"></i>
+          <h2>Profiel :&nbsp;&nbsp;&nbsp;</h2>
+        </div>
+        <p>
+          @Data.Profile
+        </p>
+      </div>
+      <div class="block">
+        <div class="lang">
+          <div class="lang-title">
+            <i class="fa fa-language fa-2x"></i>
+            <h2>Talen</h2>
+            <!-- <abbr title="Move Mouse Here To See Information"><i class="fa fa-info-circle fa-2x"></i></abbr> -->
+          </div>
+          <div class="content">
+              @foreach (var language in Data.Languages)
+                    {
+                        <div class="language-item">
+                            <h6 class="prog-title">@language.Name</h6>
+                            <CVBlazor.Pages.Components.ProgressBar Percentage="language.Percentage" Width="200"/>
+                            @*<svg height="40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="linear1" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="rgb(168, 168, 237)" />
+                                        <stop offset="50%" stop-color="var(--primary-color)" />
+                                    </linearGradient>
+                                </defs>
+                                <g fill="none">
+                                    <path stroke-width="20" stroke="#888" d="M5 20 l200 0" />
+                                    <path stroke="url(#linear1)" stroke-width="20" d='@($"M5 20 l{language.Percentage *2 } 0")' />
+                                </g>
+                            </svg>*@
+                        </div>
+                    }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="second-col">
+        @*Ervaringen*@
+        <div class="block">
+            <div class="title">
+                <i class="fa fa-briefcase fa-2x"></i>
+                <h2>Werk ervaringen</h2>
+            </div>
+            <div class="triangle"></div>
+            <div class="content">
+                @foreach (var experience in Data.Experiences)
+                {
+                    <div class="education-item">
+                        <h4>@experience.Company</h4>
+                        <h5>@experience.From.Date.ToString("MMM yyyy") – @experience.To.Date.ToString("MMM yyyy")</h5>
+                        <p>
+                            @experience.Title
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+        @*Opleidingen*@
+      <div class="block">
+        <div class="title">
+          <i class="fa fa-graduation-cap fa-2x"></i>
+          <h2>opleidingen</h2>
+        </div>
+        <div class="triangle"></div>
+        <div class="content">
+            @foreach (var education in Data.Educations)
+                {
+                    <div class="education-item">
+                        <h4>@education.University</h4>
+                        <h5>@education.From.Date.ToString("MMM yyyy") – @education.To.Date.ToString("MMM yyyy")</h5>
+                        <p>
+                            @education.Discreption
+                        </p>
+                    </div>
+                }
+        </div>
+      </div>
+      
+      <div class="block skill">
+        <div class="title">
+          <i class="fa fa-cogs fa-2x"></i>
+          <h2>vaardigheden</h2>
+          <!-- <abbr title="Move Mouse Here To See Information"><i class="fa fa-info-circle fa-2x"></i></abbr> -->
+        </div>
+        <div class="triangle"></div>
+        <div class="content">
+                @foreach (var skill in Data.Skills)
+                {
+                    <div class="language-item">
+                        <h6 class="prog-title">@skill.Name</h6>
+                        <CVBlazor.Pages.Components.ProgressBar Percentage="skill.Percentage" Width="250"/>
+                        
+                    </div>
+                }
+          
+        </div>
+      </div>
+      <div class="block">
+        <div class="title">
+          <i class="fa fa-book-open fa-2x"></i>
+          <h2>cursussen</h2>
+        </div>
+        <div class="triangle"></div>
+        <div class="content">
+          <ul>
+            <li>
+              <i class="fa fa-medal fa-2x"></i><span>&nbsp;&nbsp;Feb 2018 - jul 2018 : Nederlandse taal als tweede
+                taal B2</span>
+            </li>
+            <li>
+              <i class="fa fa-medal fa-2x"></i><span>&nbsp;&nbsp;Mei 2017 - dec 2017: Nederlandse taal als tweede
+                taal B1</span>
+            </li>
+            <li>
+              <i class="fa fa-medal fa-2x"></i><span>&nbsp;&nbsp;Feb 2017 - Mei 2017: Nederlandse taal als tweede
+                taal A2</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ @* <script>
+    function changecolor(mycolor) {
+      document.documentElement.style.setProperty("--primary-color", mycolor);
+    }
+    window.onscroll = () => {
+      var classtmp, animtmp;
+
+      for (var i = 1; i < 6; i++) {
+        classtmp = 's' + i;
+        animtmp = 'progress' + i;
+        if (window.scrollY > 600) {
+          // console.log(tmp);
+          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', animtmp);
+
+        } else if (window.scrollY < 400) {
+          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', '');
+        }
+      }
+      for (var i = 1; i < 4; i++) {
+        classtmp = 't' + i;
+        animtmp = 'progress-t' + i;
+        if (window.scrollY > 800) {
+          // console.log(tmp);
+          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', animtmp);
+
+        } else if (window.scrollY < 700) {
+          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', '');
+        }
+      }
+    }
+  </script>*@
+@code{
+
+    public Data Data { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Data = await http.GetFromJsonAsync<Data>("sample-data/CVData.json")?? new Data();
+    }
+
+    DotNetObjectReference<Index>? selfReference;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            selfReference = DotNetObjectReference.Create(this);
+            var minInterval = 500; // Only notify every 500 ms
+            await JS.InvokeVoidAsync("onScroll", minInterval);
+        }
+    }
+    public void Dispose() => selfReference?.Dispose();
+}
