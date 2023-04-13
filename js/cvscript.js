@@ -1,3 +1,8 @@
+
+function changecolor(mycolor) {
+    document.documentElement.style.setProperty("--primary-color", mycolor);
+}
+
 function onScroll(interval) {
 
     const 
@@ -31,3 +36,4 @@ function onScroll(interval) {
         }
     }, interval);
 }
+

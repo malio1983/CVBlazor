@@ -33,15 +33,15 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-KusHSb8x3AksFK1SGwItOa6zODR3PyWsA5ZCvEDzNuA=",
+      "hash": "sha256-btEdXIDbxG\/WPaEfS4MEwMNG0mX9UG\/g+vmwKKH8Ies=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-G17zuWayHAM+dW5Nu1+lfpQHJ2fZL4ohAsn24H1OqFc=",
+      "hash": "sha256-0JK8oS73Rd1KMTEx6aZDvn5jBmed3pjOLo7ab2RTvVE=",
       "url": "_framework\/CVBlazor.dll"
     },
     {
-      "hash": "sha256-R8lHDut+\/xje2h8S\/VytnwQgGXbZYTaymaG4kKcZGRo=",
+      "hash": "sha256-OR1NewrFjUnInxww33V1RNLziyXNCwIE9w9Is3YEv00=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
@@ -145,7 +145,7 @@
       "url": "_framework\/System.Runtime.CompilerServices.Unsafe.dll"
     },
     {
-      "hash": "sha256-4phG89E1lQr\/1EGu+somcOkLqrCdP0qcFFjysKgTZYA=",
+      "hash": "sha256-8h04y2eWS1\/JOSu+4cDGwCQ2gfriMrImQ\/5xWVTSHiI=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -161,7 +161,7 @@
       "url": "CVBlazor.styles.css"
     },
     {
-      "hash": "sha256-H3ILTx5K8zpGYvsFMGBLsdCaKlaStfKJ+iYwDLyzqhk=",
+      "hash": "sha256-5XaiATQ3kcHJfOt6Cy608t5P9XhnhrH8vf8IlqD6xLk=",
       "url": "404.html"
     },
     {
@@ -177,7 +177,7 @@
       "url": "css\/bootstrap\/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-4Ykd+HO3lywhZ0YsSGkJBw50tKxHy6+ICL+Y1Y3or3c=",
+      "hash": "sha256-7any5N7Hif\/Kk+DCYXq2orb5TwDk0j1OCzs7N0Z\/PmM=",
       "url": "css\/cvstyle.css"
     },
     {
@@ -233,11 +233,11 @@
       "url": "img\/myphoto.jpg"
     },
     {
-      "hash": "sha256-H3ILTx5K8zpGYvsFMGBLsdCaKlaStfKJ+iYwDLyzqhk=",
+      "hash": "sha256-5XaiATQ3kcHJfOt6Cy608t5P9XhnhrH8vf8IlqD6xLk=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-Vc\/2fcVjfbpBHIXpqyR6KVq1cZJqyyi7IKKMHD5a1GE=",
+      "hash": "sha256-zSrrqtkR2GHXZJumQ8vwOcJTQKMwisPmJxjqseF2t4E=",
       "url": "js\/cvscript.js"
     },
     {
@@ -249,5 +249,5 @@
       "url": "sample-data\/CVData.json"
     }
   ],
-  "version": "\/7ki3WoX"
+  "version": "y\/uhrLzC"
 };
