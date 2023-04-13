@@ -3,6 +3,7 @@
     public class Data
     {
         private List<Education> educations = new();
+        private List<Experience> experiences = new();
 
         public string Name { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
@@ -15,7 +16,7 @@
         public string Profile { get; set; } = string.Empty;
         public List<Language> Languages { get; set; } = new();
         public List<Education> Educations { get => educations.OrderByDescending(x=>x.From).ThenByDescending(x=>x.To).ToList(); set => educations = value; }
-        public List<Experience> Experiences { get; set; } = new();
+        public List<Experience> Experiences { get => experiences.OrderByDescending(x => x.From).ThenByDescending(x => x.To).ToList(); set => experiences=value; }
         public List<Skill> Skills { get; set; } = new();
         public List<Course> Courses { get; set; } = new();
 

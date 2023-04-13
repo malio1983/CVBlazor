@@ -8,12 +8,12 @@
 <div class="container">
     <abbr title="Click to apply the color">
       <span class="colors">
-        <button class="brown" value="brown" onclick="changecolor(this.value)"></button>
-        <button class="darkblue" value="#005" onclick="changecolor(this.value)"></button>
-        <button class="terquaz" value="rgb(3, 116, 124)" onclick="changecolor(this.value)"></button>
-        <button class="green" value="#080" onclick="changecolor(this.value)"></button>
-        <button class="petrol" value="#34435a" onclick="changecolor(this.value)"></button>
-        <button class="purple" value="purple" onclick="changecolor(this.value)"></button>
+            <button class="brown" value="brown"                 @onclick='@(()=>ChangeColor("brown"))'></button>
+            <button class="darkblue" value="#005"               @onclick='@(()=>ChangeColor("#005"))'></button>
+            <button class="terquaz" value="rgb(3, 116, 124)"    @onclick='@(()=>ChangeColor("rgb(3, 116, 124)"))'></button>
+            <button class="green" value="#080"                  @onclick='@(()=>ChangeColor("#080"))'></button>
+            <button class="petrol" value="#34435a"              @onclick='@(()=>ChangeColor("#34435a"))'></button>
+            <button class="purple" value="purple"               @onclick='@(()=>ChangeColor("purple"))'></button>
       </span>
     </abbr>
     <div class="first-col">
@@ -73,18 +73,6 @@
                         <div class="language-item">
                             <h6 class="prog-title">@language.Name</h6>
                             <CVBlazor.Pages.Components.ProgressBar Percentage="language.Percentage" Width="200"/>
-                            @*<svg height="40" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="linear1" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-                                        <stop offset="0%" stop-color="rgb(168, 168, 237)" />
-                                        <stop offset="50%" stop-color="var(--primary-color)" />
-                                    </linearGradient>
-                                </defs>
-                                <g fill="none">
-                                    <path stroke-width="20" stroke="#888" d="M5 20 l200 0" />
-                                    <path stroke="url(#linear1)" stroke-width="20" d='@($"M5 20 l{language.Percentage *2 } 0")' />
-                                </g>
-                            </svg>*@
                         </div>
                     }
           </div>
@@ -177,37 +165,7 @@
       </div>
     </div>
   </div>
- @* <script>
-    function changecolor(mycolor) {
-      document.documentElement.style.setProperty("--primary-color", mycolor);
-    }
-    window.onscroll = () => {
-      var classtmp, animtmp;
 
-      for (var i = 1; i < 6; i++) {
-        classtmp = 's' + i;
-        animtmp = 'progress' + i;
-        if (window.scrollY > 600) {
-          // console.log(tmp);
-          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', animtmp);
-
-        } else if (window.scrollY < 400) {
-          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', '');
-        }
-      }
-      for (var i = 1; i < 4; i++) {
-        classtmp = 't' + i;
-        animtmp = 'progress-t' + i;
-        if (window.scrollY > 800) {
-          // console.log(tmp);
-          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', animtmp);
-
-        } else if (window.scrollY < 700) {
-          document.getElementsByClassName(classtmp)[0].style.setProperty('animation-name', '');
-        }
-      }
-    }
-  </script>*@
 @code{
 
     public Data Data { get; set; } = new();
@@ -228,4 +186,8 @@
         }
     }
     public void Dispose() => selfReference?.Dispose();
+    private async Task ChangeColor(string color)
+    {
+        await JS.InvokeVoidAsync("changecolor",color);
+    }
 }
